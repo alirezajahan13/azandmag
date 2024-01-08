@@ -1,0 +1,130 @@
+@import 'sass/variables';
+@import 'sass/breakpoints';
+@import 'sass/source';
+
+.generalSinglePostStyle{
+    width: 100%;
+    .singlePostFlex{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        article.post{
+            width: 70%;
+            @include sm{
+                width: 100%;
+            }
+        }
+        .stickySidebarSinglePostParent{
+            width: 27%;
+            @include sm{
+                width: 100%;
+            }
+            .stickyNewestPostBack , .stickyMostViewPostBack{
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                margin-bottom: 20px;
+                .generalHeading{
+                    margin-top: 0;
+                }
+                h2{
+                    font-size: 18px;
+                }
+                a.recent-post , a.popular-post{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    img{
+                        display: block;
+                        width: 30%;
+                    }
+                    h3{
+                        margin: 0;
+                        width: 65%;
+                        font-size: 16px;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+    .singlePostHeaderParent{
+        padding: 10px 0px;
+        @include xs{
+            font-size: 13px;
+        }
+        .singlePostHeader{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            width: max-content;
+            padding: 10px 0px;
+            @include xs{
+                width: auto;
+                gap: 8px;
+            }
+            .categoryPost{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 15px;
+                padding-left: 15px;
+                border-left: 1px solid #eeeeee;
+                @include xs{
+                    padding-left: 8px;
+                }
+                a{
+                    color: $textColorLight2;
+                }
+            }
+            .dateSinglePost{
+                padding: 0px 15px;
+                border-left: 1px solid #eeeeee;
+                color: $textColorLight2;
+                @include xs{
+                    padding: 0px 8px;
+                    border-left: none;
+                }
+            }
+            .timeCountSinglePost{
+                padding: 0px 15px;
+                color: $textColorLight2;
+                @include xs{
+                    padding: 0;
+                }
+            }
+        }
+        .authorSinglePost{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0px;
+            img{
+                border-radius: 100%;
+                width: 40px;
+                height: 40px;
+                box-shadow: rgba(25, 25, 35, 0.15) 0px 2px 8px 0px;
+            }
+            a{
+                font-weight: 600;
+            }
+        }
+    }
+    .post-thumbnail{
+        img{
+            width: 100%;
+        }
+    }
+    .entry-content{
+        margin-top: 30px;
+        margin-bottom: 30px;
+        p{
+            text-align: justify;
+        }
+    }
+}
+.contentSingleBox{
+    margin: auto;
+    max-width: 700px;
+}

@@ -142,7 +142,7 @@ function azandmag_scripts() {
 	wp_style_add_data( 'azandmag-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'azandmag-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
+	wp_enqueue_style( 'additional-style', get_template_directory_uri().'/additional.css', array(), _S_VERSION );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -176,3 +176,32 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+function calculate_reading_time() {
+
+    $content = get_post_field('post_content', get_the_ID());
+
+    $word_count = str_word_count($content);
+
+    $reading_speed = 5;
+
+    $reading_time = ceil($word_count / $reading_speed);
+
+    return sprintf(_n('%d', '%d', $reading_time, 'textdomain'), $reading_time);
+}
+function reading_time_shortcode() {
+    return '<span class="reading-time">' . calculate_reading_time() . '</span>';
+}
+add_shortcode('reading_time', 'reading_time_shortcode');
+
+
+function increment_post_views() {
+    if (is_single()) {
+        $post_id = get_the_ID();
+        $views = get_post_meta($post_id, 'views', true);
+        $views = empty($views) ? 1 : intval($views) + 1;
+        update_post_meta($post_id, 'views', $views);
+    }
+}
+
+add_action('wp_head', 'increment_post_views');
