@@ -1,0 +1,428 @@
+/*!
+Theme Name: azandmag
+Theme URI: https://underscores.me/
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Hi. I'm a starter theme called <code>azandmag</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: azandmag
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+azandmag is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+@font-face {
+  font-family: "iransansx";
+  src: url("fonts/iransansx/woff2/IRANSansXFaNum-Heavy.woff");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "iransansx";
+  src: url("fonts/iransansx/woff2/IRANSansXFaNum-Thin.woff");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "iransansx";
+  src: url("fonts/iransansx/woff2/IRANSansXFaNum-UltraLight.woff");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "iransansx";
+  src: url("fonts/iransansx/woff2/IRANSansXFaNum-Light.woff");
+  font-weight: 350;
+}
+@font-face {
+  font-family: "iransansx";
+  src: url("fonts/iransansx/woff2/IRANSansXFaNum-Regular.woff");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "iransansx";
+  src: url("fonts/iransansx/woff2/IRANSansXFaNum-Medium.woff");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "iransansx";
+  src: url("fonts/iransansx/woff2/IRANSansXFaNum-DemiBold.woff");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "iransansx";
+  src: url("fonts/iransansx/woff2/IRANSansXFaNum-Bold.woff");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "iransansx";
+  src: url("fonts/iransansx/woff2/IRANSansXFaNum-ExtraBlack.woff");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "iransansx";
+  src: url("fonts/iransansx/woff2/IRANSansXFaNum-Black.woff");
+  font-weight: 900;
+}
+body {
+  font-family: iransansx !important;
+  direction: rtl;
+  margin: 0;
+  overflow-x: hidden !important;
+  width: 100% !important;
+  color: #383e43;
+  padding: 0;
+  font-size: 14.5px;
+  background-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  direction: rtl;
+}
+
+::-moz-selection {
+  background-color: #e25e28;
+  color: #fff;
+}
+
+::selection {
+  background-color: #e25e28;
+  color: #fff;
+}
+
+.mainView {
+  max-width: 1280px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+@media screen and (max-width: 1280px) {
+  .mainView {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+  }
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: #383e43;
+  transition: all 0.3s;
+}
+a:hover, a:visited:hover {
+  color: #e25e28;
+}
+
+button {
+  font-family: iransansx !important;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4, h5, h6, input, textarea {
+  font-family: iransansx !important;
+  color: #383e43;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  line-height: 35px;
+}
+
+h1 {
+  font-size: 26px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 17px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 900;
+}
+
+.generalHeading {
+  margin: 20px 0;
+  width: -moz-max-content;
+  width: max-content;
+}
+.generalHeading span {
+  display: block;
+  line-height: 25px;
+  font-size: 15px;
+  margin-top: 15px;
+  color: #6c6c6d;
+}
+.generalHeading h1, .generalHeading h2, .generalHeading h3, .generalHeading h4, .generalHeading h5, .generalHeading h6 {
+  margin: 0;
+  color: #383e43;
+  font-size: 23px;
+  line-height: 30px;
+  position: relative;
+  padding-right: 10px;
+}
+.generalHeading h1::before, .generalHeading h2::before, .generalHeading h3::before, .generalHeading h4::before, .generalHeading h5::before, .generalHeading h6::before {
+  position: absolute;
+  content: "";
+  background-color: #e25e28;
+  width: 3px;
+  height: 100%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+@media screen and (max-width: 480px) {
+  .generalHeading h1, .generalHeading h2, .generalHeading h3, .generalHeading h4, .generalHeading h5, .generalHeading h6 {
+    font-size: 18px;
+  }
+}
+
+.generalButton {
+  position: relative;
+  color: #383e43;
+  padding: 10px 0;
+  padding-left: 20px;
+  font-size: 13px;
+  font-weight: 400;
+  display: block;
+  width: -moz-max-content;
+  width: max-content;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.generalButton::after {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width='12' height='12' fill='var(--primary-1)'%3E%3Cpath fill='%23e25e28' d='m6.7 14.7 1.4-1.4L3.8 9H16V7H3.8l4.3-4.3-1.4-1.4L0 8z'/%3E%3C/svg%3E");
+  height: 15px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  transition: all 0.3s;
+}
+.generalButton:hover {
+  color: #383e43;
+}
+.generalButton:hover::after {
+  transform: translateX(-3px);
+}
+
+.fillButton {
+  border-radius: 30px;
+  padding: 5px 20px;
+  background-color: #32323c;
+  border: 1px solid #32323c;
+  color: #fff;
+  cursor: pointer;
+  padding-left: 30px;
+}
+.fillButton::after {
+  left: 10px;
+}
+.fillButton:hover {
+  color: #fff;
+  background-color: #383e43;
+}
+
+.fillButtonNoArrow {
+  cursor: pointer;
+  padding-left: 20px;
+  margin: 10px 0;
+}
+.fillButtonNoArrow::after {
+  display: none;
+}
+
+.noArrowButton {
+  padding: 5px 20px;
+  border-radius: 30px;
+  border: 1px solid #32323c;
+  margin: 10px 0;
+  background-color: #fff;
+}
+.noArrowButton::after {
+  display: none;
+}
+.noArrowButton:hover {
+  background-color: #32323c;
+  color: #fff;
+}
+
+.mainBoxShadow {
+  box-shadow: 0 1px 3px 0 rgba(56, 62, 67, 0.1882352941);
+}
+
+p {
+  line-height: 27px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #5d5f61;
+}
+
+.lightParagraph {
+  font-weight: 300;
+}
+
+.lowMargined {
+  margin: 7px 0;
+}
+
+.mediumMargined {
+  margin: 15px 0;
+}
+
+.highMargined {
+  margin: 30px 0;
+}
+
+.extraHighMargined {
+  margin: 60px 0;
+}
+
+.lowPadding {
+  padding: 7px;
+}
+
+.mediumPadding {
+  padding: 15px;
+}
+
+.highPadding {
+  padding: 30px;
+}
+
+.noPadding {
+  padding: 0;
+}
+
+.noMargin {
+  margin: 0;
+}
+
+.centeredText {
+  text-align: center;
+}
+
+.justified {
+  text-align: justify;
+}
+
+.bottomBorder {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+li {
+  list-style-type: none;
+  margin: 7px 0;
+  position: relative;
+  padding-right: 12px;
+}
+li::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  background-color: #e25e28;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  right: 0;
+}
+
+.darkListStyle::before {
+  background-color: #383e43;
+}
+
+.noListStyle {
+  padding-right: 0;
+}
+.noListStyle::before {
+  display: none;
+}
+
+.checkListStyle {
+  padding-right: 20px;
+}
+.checkListStyle::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2340b819' width='14' height='14' viewBox='0 0 512 512'%3E%3Cpath d='M172.2 434.6a39.3 39.3 0 0 1-28.1-11.6L22.9 301.9a33.4 33.4 0 1 1 47.2-47.2l102.1 102.2L441.9 87.1a33.4 33.4 0 0 1 47.2 47.2L200.4 423a39.7 39.7 0 0 1-28.2 11.6Z'/%3E%3C/svg%3E");
+  width: 14px;
+  height: 14px;
+  background-color: initial;
+}
+
+.crossListStyle {
+  padding-right: 20px;
+}
+.crossListStyle::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23b82819' width='12' height='12' viewBox='0 0 512 512'%3E%3Cpath d='M312.2 255.8 482 86a33.5 33.5 0 1 0-47.4-47.4L264.8 208.4 95 38.6a33.5 33.5 0 0 0-47.4 0 33.5 33.5 0 0 0 0 47.4l169.8 169.8L47.6 425.6a33.5 33.5 0 0 0 0 47.4 33.5 33.5 0 0 0 47.4 0l169.8-169.8L434.6 473a33.5 33.5 0 0 0 47.4 0 33.5 33.5 0 0 0 0-47.4Z'/%3E%3C/svg%3E");
+  width: 12px;
+  height: 17px;
+  background-color: initial;
+}
+
+.arrowListStyle {
+  padding-right: 22px;
+}
+.arrowListStyle::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width='12' height='12' fill='var(--primary-1)'%3E%3Cpath fill='%23e25e28' d='m6.7 14.7 1.4-1.4L3.8 9H16V7H3.8l4.3-4.3-1.4-1.4L0 8z'/%3E%3C/svg%3E");
+  width: 12px;
+  height: 12px;
+  background-color: initial;
+}
+
+.mainBoxBorder {
+  border: 1px solid #eeeeee;
+}
+
+.alignleft {
+  float: left;
+  margin-right: 1.5em;
+  margin-bottom: 1.5em;
+  width: 50%;
+}
+
+.alignright {
+  float: right;
+  margin-left: 1.5em;
+  margin-bottom: 1.5em;
+  width: 50%;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 1.5em;
+}/*# sourceMappingURL=style-rtl.css.map */

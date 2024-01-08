@@ -1,0 +1,33 @@
+@font-face { font-family: 'iransansx'; src: url('fonts/iransansx/woff2/IRANSansXFaNum-Heavy.woff');font-weight: 100; }
+@font-face { font-family: 'iransansx'; src: url('fonts/iransansx/woff2/IRANSansXFaNum-Thin.woff');font-weight: 200; }
+@font-face { font-family: 'iransansx'; src: url('fonts/iransansx/woff2/IRANSansXFaNum-UltraLight.woff');font-weight: 300; }
+@font-face { font-family: 'iransansx'; src: url('fonts/iransansx/woff2/IRANSansXFaNum-Light.woff');font-weight: 350; }
+@font-face { font-family: 'iransansx'; src: url('fonts/iransansx/woff2/IRANSansXFaNum-Regular.woff');font-weight: 400; }
+@font-face { font-family: 'iransansx'; src: url('fonts/iransansx/woff2/IRANSansXFaNum-Medium.woff');font-weight: 500; }
+@font-face { font-family: 'iransansx'; src: url('fonts/iransansx/woff2/IRANSansXFaNum-DemiBold.woff');font-weight: 600; }
+@font-face { font-family: 'iransansx'; src: url('fonts/iransansx/woff2/IRANSansXFaNum-Bold.woff');font-weight: 700; }
+@font-face { font-family: 'iransansx'; src: url('fonts/iransansx/woff2/IRANSansXFaNum-ExtraBlack.woff');font-weight: 800; }
+@font-face { font-family: 'iransansx'; src: url('fonts/iransansx/woff2/IRANSansXFaNum-Black.woff');font-weight: 900; }
+
+// Text Colors
+$textColorMain: #383e43;
+$textColorLight: #5d5f61;
+$textColorLighter: #6c6c6d;
+
+//Main Colors
+$mainColor: #f5a623;
+$mainColorDark: #e25e28;
+$offColor: #32323c;
+
+//Back Colors
+$backColorDark: #1c1f26;
+$backColorLight: #7d7e80;
+$backColorLighter: #fcf9f8;
+
+
+@mixin placeholder {
+	&::-webkit-input-placeholder {@content}
+	&:-moz-placeholder           {@content}
+	&::-moz-placeholder          {@content}
+	&:-ms-input-placeholder      {@content}  
+}
