@@ -645,6 +645,28 @@ select option {
 .home .mainHeaderStickyBack, .blog .mainHeaderStickyBack {
   display: none;
 }
+.home .mainHeaderBack, .blog .mainHeaderBack {
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999999;
+  border-bottom: none;
+}
+.home .mainHeaderBack .mainMenu ul li a, .blog .mainHeaderBack .mainMenu ul li a {
+  color: #fff;
+}
+.home .mainHeaderBack .mainMenu ul li a:hover, .blog .mainHeaderBack .mainMenu ul li a:hover {
+  color: #e25e28;
+}
+.home .mainHeaderBack .searchIcon span, .blog .mainHeaderBack .searchIcon span {
+  color: #fff;
+  transition: all 0.4s;
+}
+.home .mainHeaderBack .searchIcon span:hover, .blog .mainHeaderBack .searchIcon span:hover {
+  color: #e25e28;
+}
 
 .generalSinglePostStyle {
   width: 100%;
@@ -879,4 +901,61 @@ select option {
 .commentInner .comment-list .comment .comment-body .reply a {
   color: #9696a0 !important;
   border-bottom: 0.7px solid #9696a0;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  content: none !important;
+}
+
+.swiper-button-next {
+  left: -5px !important;
+}
+
+.swiper-button-prev {
+  right: -5px !important;
+}
+
+.azandBlogContainer {
+  padding: 25px !important;
+}
+.azandBlogContainer .swiper-wrapper .latestPostsItems {
+  border-radius: 5px;
+  overflow: hidden;
+}
+.azandBlogContainer .swiper-wrapper .latestPostsItems a img {
+  display: block;
+}
+.azandBlogContainer .swiper-wrapper .latestPostsItems .latestPostsItemsFooter .latestPostsItemsFooterIcons {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  gap: 10px;
+}
+.azandBlogContainer .swiper-wrapper .latestPostsItems .latestPostsItemsFooter .latestPostsItemsFooterIcons .homePageBlogCardTimeCount, .azandBlogContainer .swiper-wrapper .latestPostsItems .latestPostsItemsFooter .latestPostsItemsFooterIcons .homePageBlogCardCmCount {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  font-size: 14px;
+}
+.azandBlogContainer .swiper-wrapper .latestPostsItems .latestPostsItemsFooter .latestPostsItemsFooterIcons .homePageBlogCardReadMore {
+  margin-right: auto;
+}
+.azandBlogContainer .swiper-wrapper .latestPostsItems .latestPostsItemsFooter svg {
+  display: block;
+}
+
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeList {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  gap: 25px;
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeList a:nth-child(1) {
+  width: 100%;
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeList a:nth-child(2) {
+  width: 48%;
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeList a:nth-child(3) {
+  width: 48%;
 }/*# sourceMappingURL=additional.css.map */
