@@ -2,6 +2,98 @@
 @import 'sass/breakpoints';
 @import 'sass/source';
 
+
+.mainHeaderBack , .mainHeaderStickyBack{
+    border-bottom: 1px solid #eeeeee;
+    .mainHeader{
+        display: flex;
+        align-items: center;
+        padding: 15px 0px;
+        .mainMenu{
+            width: calc(100% - 20px);
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+            li{
+                list-style-type: none;
+                padding: 0;
+                margin: 0 8px;
+                &::before{
+                    display: none;
+                }
+                a{
+                    padding: 10px;
+                    font-size: 16px;
+                    display: flex;
+                    align-items: center;
+                    svg{
+                        margin-left: 5px;
+                        transition: all 0.3s;
+                    }
+                    .menu-icon{
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+                &:hover{
+                    a{
+                        svg{
+                            fill: $mainColorDark;
+                        }
+                    }
+                }
+            }
+        }
+        .searchIcon{
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            .searchIconBack{
+                border-radius: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                background-color: #32323c;
+            }
+            span{
+                font-weight: 700;
+                margin-right: 5px;
+            }
+        }
+    }
+}
+.mainHeaderStickyBack{
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: -100px;
+    transition: all 0.5s;
+    z-index: 999;
+    padding: 5px 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    background-color: #fff;
+    .mainHeader{
+        padding: 5px 0px;
+    }
+}
+.showStickyHeader{
+    top: 0;
+}
+.stickySidebarChange{
+    top: 90px !important;
+}
+.home , .blog{
+    .mainHeaderStickyBack{
+        display: none;
+    }
+}
 .generalSinglePostStyle{
     width: 100%;
     .singlePostFlex{
@@ -16,16 +108,35 @@
         }
         .stickySidebarSinglePostParent{
             width: 27%;
+            position: sticky;
+            height: max-content;
+            top: 10px;
+            bottom: auto;
             @include sm{
                 width: 100%;
+                position: unset;
             }
             .stickyNewestPostBack , .stickyMostViewPostBack{
                 display: flex;
                 flex-direction: column;
                 gap: 15px;
                 margin-bottom: 20px;
+                &::before{
+                    content: "";
+                    position: absolute;
+                    width: 1px;
+                    height: 100%;
+                    top: 0px;
+                    right: 1px;
+                    background-color: #eeeeee;
+                }
                 .generalHeading{
                     margin-top: 0;
+                    h2{
+                        &::before{
+                            z-index: 9;
+                        }
+                    }
                 }
                 h2{
                     font-size: 18px;
@@ -34,6 +145,7 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+                    padding-right: 15px;
                     img{
                         display: block;
                         width: 30%;
@@ -127,4 +239,81 @@
 .contentSingleBox{
     margin: auto;
     max-width: 700px;
+}
+.commentInner{
+    textarea{
+        margin-right: 0 !important;
+    }
+    h2{
+        text-align: center;
+    }
+    .comment-list{
+        padding: 0px 40px;
+        @include md{
+            padding: 0px;
+        }
+        li{
+            &::before{
+                content: none;
+            }
+        }
+        .comment{
+            padding: 30px 0;
+            
+            .comment-body{
+                border-bottom: 1px solid #eeeeee;
+                padding: 20px 0px;
+                border-top: 1px solid #eeeeee;
+                position: relative;
+                &::before{
+                    position: absolute;
+                    content: "";
+                    background: #eeeeee;
+                    width: 1px;
+                    height: 75%;
+                    top: 20px;
+                    right: 15px;
+                    z-index: 9;
+                }
+                .comment-meta{
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    margin-bottom: 10px;
+                    .comment-metadata{
+                        margin-right: 5px;
+                        @include xs{
+                            margin-right: auto;
+                        }
+                        a{
+                            color: #7d7d87 !important;
+                            font-size: 13px;
+                        }
+                    }
+                    .comment-author{
+                        display: flex;
+                        justify-content: flex-start ;
+                        align-items: center;
+                        img{
+                            border-radius: 100%;
+                            margin: 0 0 5px 20px;
+                            z-index: 99;
+                        }
+                        span.says{
+                            display: none;
+                        }
+                    }
+                }
+                .comment-content , .reply{
+                    padding-right: 50px;
+                }
+                .reply{
+                    a{
+                        color: #9696a0 !important;
+                        border-bottom: 0.7px solid #9696a0;
+                    }
+                }
+            }
+        }
+    }
 }

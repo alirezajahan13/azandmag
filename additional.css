@@ -556,6 +556,96 @@ select option {
   font-family: iranyekanfn;
 }
 
+.mainHeaderBack, .mainHeaderStickyBack {
+  border-bottom: 1px solid #eeeeee;
+}
+.mainHeaderBack .mainHeader, .mainHeaderStickyBack .mainHeader {
+  display: flex;
+  align-items: center;
+  padding: 15px 0px;
+}
+.mainHeaderBack .mainHeader .mainMenu, .mainHeaderStickyBack .mainHeader .mainMenu {
+  width: calc(100% - 20px);
+}
+.mainHeaderBack .mainHeader ul, .mainHeaderStickyBack .mainHeader ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+.mainHeaderBack .mainHeader ul li, .mainHeaderStickyBack .mainHeader ul li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 8px;
+}
+.mainHeaderBack .mainHeader ul li::before, .mainHeaderStickyBack .mainHeader ul li::before {
+  display: none;
+}
+.mainHeaderBack .mainHeader ul li a, .mainHeaderStickyBack .mainHeader ul li a {
+  padding: 10px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+.mainHeaderBack .mainHeader ul li a svg, .mainHeaderStickyBack .mainHeader ul li a svg {
+  margin-left: 5px;
+  transition: all 0.3s;
+}
+.mainHeaderBack .mainHeader ul li a .menu-icon, .mainHeaderStickyBack .mainHeader ul li a .menu-icon {
+  display: flex;
+  align-items: center;
+}
+.mainHeaderBack .mainHeader ul li:hover a svg, .mainHeaderStickyBack .mainHeader ul li:hover a svg {
+  fill: #e25e28;
+}
+.mainHeaderBack .mainHeader .searchIcon, .mainHeaderStickyBack .mainHeader .searchIcon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.mainHeaderBack .mainHeader .searchIcon .searchIconBack, .mainHeaderStickyBack .mainHeader .searchIcon .searchIconBack {
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #32323c;
+}
+.mainHeaderBack .mainHeader .searchIcon span, .mainHeaderStickyBack .mainHeader .searchIcon span {
+  font-weight: 700;
+  margin-right: 5px;
+}
+
+.mainHeaderStickyBack {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: -100px;
+  transition: all 0.5s;
+  z-index: 999;
+  padding: 5px 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  background-color: #fff;
+}
+.mainHeaderStickyBack .mainHeader {
+  padding: 5px 0px;
+}
+
+.showStickyHeader {
+  top: 0;
+}
+
+.stickySidebarChange {
+  top: 90px !important;
+}
+
+.home .mainHeaderStickyBack, .blog .mainHeaderStickyBack {
+  display: none;
+}
+
 .generalSinglePostStyle {
   width: 100%;
 }
@@ -574,10 +664,16 @@ select option {
 }
 .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent {
   width: 27%;
+  position: sticky;
+  height: -moz-max-content;
+  height: max-content;
+  top: 10px;
+  bottom: auto;
 }
 @media screen and (max-width: 768px) {
   .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent {
     width: 100%;
+    position: unset;
   }
 }
 .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyNewestPostBack, .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyMostViewPostBack {
@@ -586,8 +682,20 @@ select option {
   gap: 15px;
   margin-bottom: 20px;
 }
+.generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyNewestPostBack::before, .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyMostViewPostBack::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  top: 0px;
+  right: 1px;
+  background-color: #eeeeee;
+}
 .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyNewestPostBack .generalHeading, .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyMostViewPostBack .generalHeading {
   margin-top: 0;
+}
+.generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyNewestPostBack .generalHeading h2::before, .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyMostViewPostBack .generalHeading h2::before {
+  z-index: 9;
 }
 .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyNewestPostBack h2, .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyMostViewPostBack h2 {
   font-size: 18px;
@@ -596,6 +704,7 @@ select option {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-right: 15px;
 }
 .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyNewestPostBack a.recent-post img, .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyNewestPostBack a.popular-post img, .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyMostViewPostBack a.recent-post img, .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyMostViewPostBack a.popular-post img {
   display: block;
@@ -695,4 +804,79 @@ select option {
 .contentSingleBox {
   margin: auto;
   max-width: 700px;
+}
+
+.commentInner textarea {
+  margin-right: 0 !important;
+}
+.commentInner h2 {
+  text-align: center;
+}
+.commentInner .comment-list {
+  padding: 0px 40px;
+}
+@media screen and (max-width: 992px) {
+  .commentInner .comment-list {
+    padding: 0px;
+  }
+}
+.commentInner .comment-list li::before {
+  content: none;
+}
+.commentInner .comment-list .comment {
+  padding: 30px 0;
+}
+.commentInner .comment-list .comment .comment-body {
+  border-bottom: 1px solid #eeeeee;
+  padding: 20px 0px;
+  border-top: 1px solid #eeeeee;
+  position: relative;
+}
+.commentInner .comment-list .comment .comment-body::before {
+  position: absolute;
+  content: "";
+  background: #eeeeee;
+  width: 1px;
+  height: 75%;
+  top: 20px;
+  right: 15px;
+  z-index: 9;
+}
+.commentInner .comment-list .comment .comment-body .comment-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.commentInner .comment-list .comment .comment-body .comment-meta .comment-metadata {
+  margin-right: 5px;
+}
+@media screen and (max-width: 480px) {
+  .commentInner .comment-list .comment .comment-body .comment-meta .comment-metadata {
+    margin-right: auto;
+  }
+}
+.commentInner .comment-list .comment .comment-body .comment-meta .comment-metadata a {
+  color: #7d7d87 !important;
+  font-size: 13px;
+}
+.commentInner .comment-list .comment .comment-body .comment-meta .comment-author {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.commentInner .comment-list .comment .comment-body .comment-meta .comment-author img {
+  border-radius: 100%;
+  margin: 0 0 5px 20px;
+  z-index: 99;
+}
+.commentInner .comment-list .comment .comment-body .comment-meta .comment-author span.says {
+  display: none;
+}
+.commentInner .comment-list .comment .comment-body .comment-content, .commentInner .comment-list .comment .comment-body .reply {
+  padding-right: 50px;
+}
+.commentInner .comment-list .comment .comment-body .reply a {
+  color: #9696a0 !important;
+  border-bottom: 0.7px solid #9696a0;
 }/*# sourceMappingURL=additional.css.map */

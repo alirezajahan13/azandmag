@@ -23,37 +23,45 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'azandmag' ); ?></a>
-
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
+	<div class="mainHeaderBack">
+		<div class="mainHeader mainView">
+			<a class="logoSection" href="#">
+				<svg width="50" height="50" fill="#de5826" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="m15.37 13.68-4-12a1 1 0 0 0-1-.68H5.63a1 1 0 0 0-.95.68l-4.05 12a1 1 0 0 0 1 1.32h2.93a1 1 0 0 0 .94-.68l.61-1.78 3 2.27a1 1 0 0 0 .6.19h4.68a1 1 0 0 0 .98-1.32Zm-5.62.66a.32.32 0 0 1-.2-.07L3.9 10.08l-.09-.07h3l.08-.21 1-2.53 2.24 6.63a.34.34 0 0 1-.38.44Zm4.67 0H10.7a1 1 0 0 0 0-.66l-4.05-12h3.72a.34.34 0 0 1 .32.23l4.05 12a.34.34 0 0 1-.32.43Z"/></svg>
+			</a>
 			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$azandmag_description = get_bloginfo( 'description', 'display' );
-			if ( $azandmag_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $azandmag_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'azandmag' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
+				wp_nav_menu(
+					array(
+						'theme_location' => 'menu-1',
+						'container_class'=>'mainMenu'
+					)
+				);
 			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+			<a class="searchIcon">
+				<div class="searchIconBack">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#fff"><path d="m20.449 18.751-4.586-4.586a7.222 7.222 0 1 0-1.7 1.7l4.586 4.586zM4.4 10a5.6 5.6 0 1 1 5.6 5.6A5.6 5.6 0 0 1 4.4 10z"/></svg>
+				</div>
+				<span>جستجو</span>
+			</a>
+		</div>
+	</div>
+	<div class="mainHeaderStickyBack">
+		<div class="mainHeader mainView">
+			<a class="logoSection" href="#">
+				<svg width="50" height="50" fill="#de5826" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="m15.37 13.68-4-12a1 1 0 0 0-1-.68H5.63a1 1 0 0 0-.95.68l-4.05 12a1 1 0 0 0 1 1.32h2.93a1 1 0 0 0 .94-.68l.61-1.78 3 2.27a1 1 0 0 0 .6.19h4.68a1 1 0 0 0 .98-1.32Zm-5.62.66a.32.32 0 0 1-.2-.07L3.9 10.08l-.09-.07h3l.08-.21 1-2.53 2.24 6.63a.34.34 0 0 1-.38.44Zm4.67 0H10.7a1 1 0 0 0 0-.66l-4.05-12h3.72a.34.34 0 0 1 .32.23l4.05 12a.34.34 0 0 1-.32.43Z"/></svg>
+			</a>
+			<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'menu-1',
+						'container_class'=>'mainMenu'
+					)
+				);
+			?>
+			<a class="searchIcon">
+				<div class="searchIconBack">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#fff"><path d="m20.449 18.751-4.586-4.586a7.222 7.222 0 1 0-1.7 1.7l4.586 4.586zM4.4 10a5.6 5.6 0 1 1 5.6 5.6A5.6 5.6 0 0 1 4.4 10z"/></svg>
+				</div>
+				<span>جستجو</span>
+			</a>
+		</div>
+	</div>
