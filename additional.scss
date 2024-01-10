@@ -361,47 +361,50 @@
     .swiper-wrapper{
         // overflow: hidden;
         padding: 15px 1px !important;
-        .latestPostsItems{
-            border-radius: 3px;
-            overflow: hidden;
-            a{
-                img{
-                    display: block;
-                }
-            }
-            .latestPostsItemsFooter{
-                padding: 20px 20px 15px;
+
+    }
+}
+.latestPostsItems{
+    border-radius: 5px;
+    overflow: hidden;
+    a{
+        img{
+            display: block;
+        }
+    }
+    .latestPostsItemsFooter{
+        padding: 20px 20px 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        .titleCardBlogSwiper{
+            display: flex;
+
+        }
+        h3{
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .latestPostsItemsFooterIcons{
+            display: flex;
+            align-items: center;
+            color: #7d7d87 !important;
+            // padding: 15px;
+            gap: 10px;
+            .homePageBlogCardTimeCount , .homePageBlogCardCmCount{
                 display: flex;
-                flex-direction: column;
-                gap: 15px;
-                .titleCardBlogSwiper{
-                    display: flex;
-                    h3{
-                        margin: 0;
-                        padding: 0;
-                        font-size: 18px;
-                        font-weight: 700;
-                    }
-                }
-                .latestPostsItemsFooterIcons{
-                    display: flex;
-                    align-items: center;
-                    // padding: 15px;
-                    gap: 10px;
-                    .homePageBlogCardTimeCount , .homePageBlogCardCmCount{
-                        display: flex;
-                        gap: 3px;
-                        align-items: center;
-                        font-size: 14px;
-                    }
-                    .homePageBlogCardReadMore{
-                        margin-right: auto;
-                    }
-                }
-                svg{
-                    display: block;
-                }
+                gap: 3px;
+                align-items: center;
+                font-size: 12px;
             }
+            .homePageBlogCardReadMore{
+                margin-right: auto;
+            }
+        }
+        svg{
+            display: block;
         }
     }
 }

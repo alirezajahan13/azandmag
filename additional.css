@@ -76,14 +76,14 @@ body {
 }
 
 .mainView {
-  max-width: 1280px;
+  max-width: 1300px;
   margin-left: auto !important;
   margin-right: auto !important;
 }
 @media screen and (max-width: 1280px) {
   .mainView {
-    padding-right: 15px !important;
-    padding-left: 15px !important;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
   }
 }
 
@@ -914,43 +914,45 @@ select option {
 .azandBlogContainer .swiper-wrapper {
   padding: 15px 1px !important;
 }
-.azandBlogContainer .swiper-wrapper .latestPostsItems {
-  border-radius: 3px;
+
+.latestPostsItems {
+  border-radius: 5px;
   overflow: hidden;
 }
-.azandBlogContainer .swiper-wrapper .latestPostsItems a img {
+.latestPostsItems a img {
   display: block;
 }
-.azandBlogContainer .swiper-wrapper .latestPostsItems .latestPostsItemsFooter {
+.latestPostsItems .latestPostsItemsFooter {
   padding: 20px 20px 15px;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-.azandBlogContainer .swiper-wrapper .latestPostsItems .latestPostsItemsFooter .titleCardBlogSwiper {
+.latestPostsItems .latestPostsItemsFooter .titleCardBlogSwiper {
   display: flex;
 }
-.azandBlogContainer .swiper-wrapper .latestPostsItems .latestPostsItemsFooter .titleCardBlogSwiper h3 {
+.latestPostsItems .latestPostsItemsFooter h3 {
   margin: 0;
   padding: 0;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
 }
-.azandBlogContainer .swiper-wrapper .latestPostsItems .latestPostsItemsFooter .latestPostsItemsFooterIcons {
+.latestPostsItems .latestPostsItemsFooter .latestPostsItemsFooterIcons {
   display: flex;
   align-items: center;
+  color: #7d7d87 !important;
   gap: 10px;
 }
-.azandBlogContainer .swiper-wrapper .latestPostsItems .latestPostsItemsFooter .latestPostsItemsFooterIcons .homePageBlogCardTimeCount, .azandBlogContainer .swiper-wrapper .latestPostsItems .latestPostsItemsFooter .latestPostsItemsFooterIcons .homePageBlogCardCmCount {
+.latestPostsItems .latestPostsItemsFooter .latestPostsItemsFooterIcons .homePageBlogCardTimeCount, .latestPostsItems .latestPostsItemsFooter .latestPostsItemsFooterIcons .homePageBlogCardCmCount {
   display: flex;
   gap: 3px;
   align-items: center;
-  font-size: 14px;
+  font-size: 12px;
 }
-.azandBlogContainer .swiper-wrapper .latestPostsItems .latestPostsItemsFooter .latestPostsItemsFooterIcons .homePageBlogCardReadMore {
+.latestPostsItems .latestPostsItemsFooter .latestPostsItemsFooterIcons .homePageBlogCardReadMore {
   margin-right: auto;
 }
-.azandBlogContainer .swiper-wrapper .latestPostsItems .latestPostsItemsFooter svg {
+.latestPostsItems .latestPostsItemsFooter svg {
   display: block;
 }
 

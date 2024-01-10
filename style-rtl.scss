@@ -178,6 +178,17 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 .azandBlogFeaturedContentContainer{
     .azandBlogFeaturedContent{
+        position: relative;
+        .swiper-button-next{
+            right: -20px;
+        }
+        .swiper-button-prev{
+            left: -20px;
+        }
+        .swiper-button-prev , .swiper-button-next{
+            width: 15px;
+            height: 15px;
+        }
         .azandBlogContainer{
             .latestPostsItems{
                 background-color: #fff;
@@ -200,6 +211,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
+            border-radius: 0;
             &:last-child{
                 border: none !important;
             }
@@ -221,12 +233,37 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
                 order: 1;
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
+                justify-content: flex-start;
+                padding: 0;
+                gap: unset;
+                h3{
+                    display: block;
+                    margin: 0;
+                    margin-bottom: 10px;
+                    font-weight: 900;
+                    line-height: 28px;
+                    font-size: 16px;
+                }
+                p{
+                    margin: 0;
+                    margin-bottom: 10px;
+                    line-height: 24px;
+                    font-size: 13px;
+                    font-weight: 400;
+                    color: #7d7d87;
+                }
                 .latestPostsItemsFooterIcons{
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: flex-start;
                     align-items: center;
+                    margin-top: 15px;
+                    .homePageBlogCardReadMore , .homePageBlogCardCmCount , .homePageBlogCardTimeCount{
+                        margin-left: 10px;
+                    }
+                    .homePageBlogCardReadMore{
+                        margin-right: unset;
+                    }
                 }
             }
         }

@@ -99,14 +99,14 @@ body {
 }
 
 .mainView {
-  max-width: 1280px;
+  max-width: 1300px;
   margin-left: auto !important;
   margin-right: auto !important;
 }
 @media screen and (max-width: 1280px) {
   .mainView {
-    padding-right: 15px !important;
-    padding-left: 15px !important;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
   }
 }
 
@@ -725,6 +725,19 @@ select option {
   align-items: center;
 }
 
+.azandBlogFeaturedContentContainer .azandBlogFeaturedContent {
+  position: relative;
+}
+.azandBlogFeaturedContentContainer .azandBlogFeaturedContent .swiper-button-next {
+  right: -20px;
+}
+.azandBlogFeaturedContentContainer .azandBlogFeaturedContent .swiper-button-prev {
+  left: -20px;
+}
+.azandBlogFeaturedContentContainer .azandBlogFeaturedContent .swiper-button-prev, .azandBlogFeaturedContentContainer .azandBlogFeaturedContent .swiper-button-next {
+  width: 15px;
+  height: 15px;
+}
 .azandBlogFeaturedContentContainer .azandBlogFeaturedContent .azandBlogContainer .latestPostsItems {
   background-color: #fff;
 }
@@ -745,6 +758,7 @@ select option {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  border-radius: 0;
 }
 .gridSectionBlog .recentPostsHomeListLeft .latestPostsItems:last-child {
   border: none !important;
@@ -767,11 +781,36 @@ select option {
   order: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  padding: 0;
+  gap: unset;
+}
+.gridSectionBlog .recentPostsHomeListLeft .latestPostsItems .latestPostsItemsFooter h3 {
+  display: block;
+  margin: 0;
+  margin-bottom: 10px;
+  font-weight: 900;
+  line-height: 28px;
+  font-size: 16px;
+}
+.gridSectionBlog .recentPostsHomeListLeft .latestPostsItems .latestPostsItemsFooter p {
+  margin: 0;
+  margin-bottom: 10px;
+  line-height: 24px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #7d7d87;
 }
 .gridSectionBlog .recentPostsHomeListLeft .latestPostsItems .latestPostsItemsFooter .latestPostsItemsFooterIcons {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
+  margin-top: 15px;
+}
+.gridSectionBlog .recentPostsHomeListLeft .latestPostsItems .latestPostsItemsFooter .latestPostsItemsFooterIcons .homePageBlogCardReadMore, .gridSectionBlog .recentPostsHomeListLeft .latestPostsItems .latestPostsItemsFooter .latestPostsItemsFooterIcons .homePageBlogCardCmCount, .gridSectionBlog .recentPostsHomeListLeft .latestPostsItems .latestPostsItemsFooter .latestPostsItemsFooterIcons .homePageBlogCardTimeCount {
+  margin-left: 10px;
+}
+.gridSectionBlog .recentPostsHomeListLeft .latestPostsItems .latestPostsItemsFooter .latestPostsItemsFooterIcons .homePageBlogCardReadMore {
+  margin-right: unset;
 }/*# sourceMappingURL=style-rtl.css.map */

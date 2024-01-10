@@ -22,12 +22,12 @@ body {
     color: #fff;
 }
 .mainView{
-	max-width: 1280px;
+	max-width: 1300px;
 	margin-left: auto !important;
 	margin-right: auto !important;
 	@include mvb{
-		padding-right: 15px !important;
-		padding-left: 15px !important;
+		padding-right: 20px !important;
+		padding-left: 20px !important;
 	}
 }
 a,a:visited{
