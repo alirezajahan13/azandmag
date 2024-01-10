@@ -11,11 +11,11 @@ $(document).ready(function(){
         else{
             $('.mainHeaderStickyBack').removeClass('showStickyHeader');                 
         }
-        if($(document).scrollTop() >= 20){
-            $('.home mainHeaderBack').addClass('backWhiteHeader');
+        if($(document).scrollTop() >= 30){
+            $('.home .mainHeaderBack').addClass('backWhiteHeader');
         }
         else{
-            $('.home mainHeaderBack').removeClass('backWhiteHeader');              
+            $('.home .mainHeaderBack').removeClass('backWhiteHeader');              
         }
     })
 });

@@ -653,9 +653,14 @@ select option {
   right: 0;
   z-index: 9999999;
   border-bottom: none;
+  transition: all 0.4s;
+}
+.home .mainHeaderBack .mainHeader, .blog .mainHeaderBack .mainHeader {
+  padding: 8px 0px;
 }
 .home .mainHeaderBack .mainMenu ul li a, .blog .mainHeaderBack .mainMenu ul li a {
   color: #fff;
+  font-weight: 500;
 }
 .home .mainHeaderBack .mainMenu ul li a:hover, .blog .mainHeaderBack .mainMenu ul li a:hover {
   color: #e25e28;
@@ -669,7 +674,21 @@ select option {
 }
 
 .backWhiteHeader {
-  background-color: #fff;
+  background-color: #fff !important;
+  border-bottom: 1px solid #eeeeee !important;
+}
+.backWhiteHeader .mainMenu ul li a {
+  color: #383e43 !important;
+}
+.backWhiteHeader .mainMenu ul li a:hover {
+  color: #e25e28 !important;
+}
+.backWhiteHeader .searchIcon span {
+  color: #383e43 !important;
+  transition: all 0.4s;
+}
+.backWhiteHeader .searchIcon span:hover {
+  color: #e25e28 !important;
 }
 
 .generalSinglePostStyle {

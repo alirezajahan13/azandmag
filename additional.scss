@@ -101,11 +101,16 @@
         right: 0;
         z-index: 9999999;
         border-bottom: none;
+        transition: all 0.4s;
+        .mainHeader{
+            padding: 8px 0px;
+        }
         .mainMenu{
             ul{
                 li{
                     a{
                         color: #fff;
+                        font-weight: 500;
                         &:hover{
                             color: #e25e28;
                         }
@@ -125,7 +130,29 @@
     }
 }
 .backWhiteHeader{
-    background-color: #fff;
+    background-color: #fff !important;
+    border-bottom: 1px solid #eeeeee !important;
+    .mainMenu{
+        ul{
+            li{
+                a{
+                    color: #383e43 !important;
+                    &:hover{
+                        color: #e25e28 !important;
+                    }
+                }
+            }
+        }
+    }
+    .searchIcon{
+        span{
+            color: #383e43 !important;
+            transition: all 0.4s;
+            &:hover{
+                color: #e25e28 !important;
+            }
+        }
+    }
 }
 .generalSinglePostStyle{
     width: 100%;
