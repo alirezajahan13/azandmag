@@ -147,7 +147,8 @@ function azandmag_scripts() {
 	wp_enqueue_script( 'azandmag-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'swiper-js', get_template_directory_uri() . '/swiper/swiper-bundle.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'azandswiper', get_template_directory_uri() . '/js/azandsw.js', array('jquery'), _S_VERSION, true );
-	wp_enqueue_script( 'ahmadi-headersControl', get_template_directory_uri() . '/js/headersControl.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'azandmag-headersControl', get_template_directory_uri() . '/js/headersControl.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'azandmag-home', get_template_directory_uri() . '/js/home.js', array(), _S_VERSION, true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
