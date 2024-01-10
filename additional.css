@@ -59,6 +59,11 @@ body {
   font-size: 14.5px;
   background-color: #f9f9f9;
 }
+@media screen and (max-width: 768px) {
+  body {
+    background-color: #fff;
+  }
+}
 
 * {
   box-sizing: border-box;
@@ -143,7 +148,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .generalHeading {
-  margin: 20px 0;
+  margin: 0;
+  margin-top: 30px;
+  margin-bottom: 10px;
   width: -moz-max-content;
   width: max-content;
 }
@@ -1002,6 +1009,12 @@ select option {
 .gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight {
   width: 40%;
 }
+@media screen and (max-width: 768px) {
+  .gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight {
+    width: 100%;
+    order: 2;
+  }
+}
 .gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1012,14 +1025,24 @@ select option {
   position: relative;
   overflow: hidden;
 }
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a:nth-child(1) {
   grid-area: 1/1/3/3;
+  height: 400px;
 }
 .gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a:nth-child(2) {
   grid-area: 3/2/4/3;
 }
 .gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a:nth-child(3) {
   grid-area: 3/1/4/2;
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a:nth-child(2), .gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a:nth-child(3) {
+  height: 200px;
 }
 .gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a:nth-child(2) h3, .gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a:nth-child(3) h3 {
   font-size: 16px;
@@ -1091,28 +1114,61 @@ select option {
   display: block;
 }
 .gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .blogItemsCategoryParent {
-  background: #fff;
-  padding: 30px;
-  margin: 30px 0px 0px 0px;
-  border-radius: 3px;
+  position: sticky;
+  height: -moz-max-content;
+  height: max-content;
+  top: 80px;
+  bottom: auto;
 }
 .gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .blogItemsCategoryParent .blogItemsCategory {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding: 10px;
+  background-color: #fff;
+  position: relative;
+  padding: 30px;
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .blogItemsCategoryParent .blogItemsCategory::after {
+  position: absolute;
+  content: "";
+  background-color: #eeeeee;
+  width: 2px;
+  height: 80%;
+  top: 0;
+  bottom: 0;
+  right: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .blogItemsCategoryParent .blogItemsCategory .itemsCatParent {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin: auto;
+  margin: 15px auto;
+  position: relative;
 }
-.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .blogItemsCategoryParent .blogItemsCategory .itemsCatParent:hover {
-  transform: scaleX(-10px);
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .blogItemsCategoryParent .blogItemsCategory .itemsCatParent::before {
+  position: absolute;
+  content: "";
+  background-color: #e25e28;
+  width: 2px;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .blogItemsCategoryParent .blogItemsCategory .itemsCatParent:hover::before {
+  opacity: 1;
 }
 .gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .blogItemsCategoryParent .blogItemsCategory .itemsCatParent .blogCatItem {
-  font-size: 17px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .blogItemsCategoryParent .blogItemsCategory .itemsCatParent .categoryCount {
+  font-size: 13px;
+  font-size: 400;
 }
 
 .searchOverlay {
@@ -1308,4 +1364,14 @@ select option {
 }
 .archiveParent a .latestPostsItemsFooter svg {
   display: block;
+}
+
+.blogItemsTags {
+  background-color: #fff;
+  position: relative;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
 }/*# sourceMappingURL=additional.css.map */

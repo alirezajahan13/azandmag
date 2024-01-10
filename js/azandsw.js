@@ -1,5 +1,7 @@
+var $ = jQuery;
+
 var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 4,
+    slidesPerView: 1,
     spaceBetween: 35,
     pagination: {
       el: ".swiper-pagination",
@@ -9,101 +11,46 @@ var swiper = new Swiper(".mySwiper", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
-      autoplay: {
+    autoplay: {
     delay: 2500,
     disableOnInteraction: false,
   },
+  breakpoints: {
+	769: {
+	  slidesPerView: 3,
+	},
+	980: {
+	  slidesPerView: 4,
+	},
+  },
 });
 
-
-(function( $ ) {
-	
-	$.fn.wpPagination = function( options ) {
-		options = $.extend({
-			links: "a",
-			action: "pagination",
-			ajaxURL: "http://" + location.host + "/wp-admin/admin-ajax.php",
-			next: ".next"
-		}, options);
-		
-		function WPPagination( element ) {
-			this.$el = $( element );
-			this.init();
-		}
-		
-		WPPagination.prototype = {
-			init: function() {
-				this.createLoader();
-				this.createEnd();
-				this.handleNext();
-				this.handleLinks();
+$(document).ready(function () {
+	if($(window).width() < 760){
+		var swiperSlider = new Swiper(".mySwiperSlider", {
+			slidesPerView: 1,
+			centeredSlides: false,
+			slidesPerGroupSkip: 1,
+			grabCursor: true,
+			keyboard: {
+			  enabled: true,
 			},
-			createLoader: function() {
-				var self = this;
-				$('#pagination').prepend( "<span id='pagination-loader'>Loading...</span>" );
-				$('#pagination-loader').hide();
+			scrollbar: {
+			  el: ".swiper-scrollbar",
 			},
-			createEnd: function() {
-				var self = this;
-				$('#pagination').prepend( "<span id='pagination-end'>End</span>" );
-				$('#pagination-end').hide();
+			autoplay: {
+				delay: 2500,
+				disableOnInteraction: false,
+			  },
+			navigation: {
+			  nextEl: ".swiper-button-next",
+			  prevEl: ".swiper-button-prev",
 			},
-			handleNext: function() {
-				var self = this;
-				var $next = $( options.next, self.$el );
+			pagination: {
+			  el: ".swiper-pagination",
+			  clickable: true,
 			},
-			handleLinks: function() {
-				var self = this,
-				$links = $( options.links, self.$el ),
-				$pagination = $( "#pagination" );
-				$loader = $( "#pagination-loader" );
-				$end = $( "#pagination-end" );
-				
-				$links.click(function( e ) {
-					e.preventDefault();
-
-					$('#pagination .next').fadeOut();
-					$loader.fadeIn();
-
-					var $a = $( this ),
-					url = $a.attr("href"),
-					page = url.match( /\d+/ ),
-					pageNumber = page[0],
-					data = {
-						action: options.action,
-						page: pageNumber,
-						posttype: $('#pagination-post-type').text()
-					};
-					
-					$.get( options.ajaxURL, data, function( html ) {
-						$pagination.before( "<div id='page-" + pageNumber + "'></div>" );
-						$pagination.before( html );
-						$a.attr("href", url.replace('/' + pageNumber + '/', '/' + ( parseInt(pageNumber) + 1 ) + '/'));
-						
-						if ( !html ) {
-							$('#pagination .next').remove();
-							$loader.fadeOut();
-							$end.fadeIn();
-						} else {
-							$loader.fadeOut();
-							$('#pagination .next').fadeIn();
-							smoothScroll($('#page-' + pageNumber), 85);
-						}
-					});
-				});
-			}
-		};
-		
-		return this.each(function() {
-			var element = this;
-			var pagination = new WPPagination( element );
-		});
-	};
-	
-	$(function() {
-		if( $( "#pagination" ).length ) {
-			$( "#pagination" ).wpPagination();
-		}
-	});
-	
-})( jQuery );
+		  });
+	  
+	}
+});
