@@ -693,6 +693,7 @@ select option {
 
 .generalSinglePostStyle {
   width: 100%;
+  padding: 20px 0;
 }
 .generalSinglePostStyle .singlePostFlex {
   display: flex;
@@ -938,8 +939,16 @@ select option {
   border-radius: 5px;
   overflow: hidden;
 }
-.latestPostsItems a img {
+.latestPostsItems > a {
+  height: 200px;
+  display: flex;
+}
+.latestPostsItems > a img {
   display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .latestPostsItems .latestPostsItemsFooter {
   padding: 20px 20px 15px;

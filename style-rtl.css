@@ -813,4 +813,8 @@ select option {
 }
 .gridSectionBlog .recentPostsHomeListLeft .latestPostsItems .latestPostsItemsFooter .latestPostsItemsFooterIcons .homePageBlogCardReadMore {
   margin-right: unset;
+}
+
+.single-post {
+  background-color: #fff;
 }/*# sourceMappingURL=style-rtl.css.map */
