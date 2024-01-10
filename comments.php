@@ -26,7 +26,7 @@ if ( post_password_required() ) {
 		// You can start editing here -- including this comment!
 		if ( have_comments() ) :
 			?>
-			<h2 class="comments-title">دیدگاه ها</h2><!-- .comments-title -->
+			<div class="generalHeading"><h2 class="comments-title">دیدگاه ها</h2><!-- .comments-title --></div>
 			<?php the_comments_navigation(); ?>
 			<ol class="comment-list">
 				<?php
@@ -46,7 +46,8 @@ if ( post_password_required() ) {
 				<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'azandmag' ); ?></p>
 				<?php
 			endif;
-		endif; // Check for have_comments().
+		endif; // Check for have_comments().?>
+		<div class="generalHeading"><h2 class="comments-title">دیدگاهتان را بنویسید</h2><!-- .comments-title --></div><?php
 		comment_form();
 		?>
 	</div>

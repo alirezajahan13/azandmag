@@ -562,7 +562,7 @@ select option {
 .mainHeaderBack .mainHeader, .mainHeaderStickyBack .mainHeader {
   display: flex;
   align-items: center;
-  padding: 15px 0px;
+  padding: 8px 0px;
 }
 .mainHeaderBack .mainHeader .mainMenu, .mainHeaderStickyBack .mainHeader .mainMenu {
   width: calc(100% - 20px);
@@ -626,7 +626,6 @@ select option {
   top: -100px;
   transition: all 0.5s;
   z-index: 999;
-  padding: 5px 0;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   background-color: #fff;
 }
@@ -639,7 +638,7 @@ select option {
 }
 
 .stickySidebarChange {
-  top: 90px !important;
+  top: 80px !important;
 }
 
 .home .mainHeaderStickyBack, .blog .mainHeaderStickyBack {
@@ -691,9 +690,16 @@ select option {
   color: #e25e28 !important;
 }
 
+.single-post {
+  background-color: #fff;
+}
+
 .generalSinglePostStyle {
   width: 100%;
   padding: 20px 0;
+}
+.generalSinglePostStyle .entry-header .entry-title {
+  font-weight: 700;
 }
 .generalSinglePostStyle .singlePostFlex {
   display: flex;
@@ -726,7 +732,8 @@ select option {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  position: relative;
 }
 .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyNewestPostBack::before, .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyMostViewPostBack::before {
   content: "";
@@ -755,12 +762,20 @@ select option {
 .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyNewestPostBack a.recent-post img, .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyNewestPostBack a.popular-post img, .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyMostViewPostBack a.recent-post img, .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyMostViewPostBack a.popular-post img {
   display: block;
   width: 30%;
+  height: 75px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyNewestPostBack a.recent-post h3, .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyNewestPostBack a.popular-post h3, .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyMostViewPostBack a.recent-post h3, .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyMostViewPostBack a.popular-post h3 {
   margin: 0;
   width: 65%;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
+}
+@media screen and (max-width: 480px) {
+  .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyNewestPostBack a.recent-post h3, .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyNewestPostBack a.popular-post h3, .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyMostViewPostBack a.recent-post h3, .generalSinglePostStyle .singlePostFlex .stickySidebarSinglePostParent .stickyMostViewPostBack a.popular-post h3 {
+    font-size: 13px;
+  }
 }
 .generalSinglePostStyle .singlePostHeaderParent {
   padding: 10px 0px;
@@ -783,6 +798,9 @@ select option {
     width: auto;
     gap: 8px;
   }
+}
+.generalSinglePostStyle .singlePostHeaderParent .singlePostHeader a, .generalSinglePostStyle .singlePostHeaderParent .singlePostHeader span {
+  font-size: 13px;
 }
 .generalSinglePostStyle .singlePostHeaderParent .singlePostHeader .categoryPost {
   display: flex;
@@ -829,8 +847,6 @@ select option {
 }
 .generalSinglePostStyle .singlePostHeaderParent .authorSinglePost img {
   border-radius: 100%;
-  width: 40px;
-  height: 40px;
   box-shadow: rgba(25, 25, 35, 0.15) 0px 2px 8px 0px;
 }
 .generalSinglePostStyle .singlePostHeaderParent .authorSinglePost a {
@@ -855,9 +871,6 @@ select option {
 .commentInner textarea {
   margin-right: 0 !important;
 }
-.commentInner h2 {
-  text-align: center;
-}
 .commentInner .comment-list {
   padding: 0px 40px;
 }
@@ -870,7 +883,7 @@ select option {
   content: none;
 }
 .commentInner .comment-list .comment {
-  padding: 30px 0;
+  padding: 10px 0;
 }
 .commentInner .comment-list .comment .comment-body {
   border-bottom: 1px solid #eeeeee;
@@ -925,6 +938,9 @@ select option {
 .commentInner .comment-list .comment .comment-body .reply a {
   color: #9696a0 !important;
   border-bottom: 0.7px solid #9696a0;
+}
+.commentInner .comment-respond .comment-reply-title {
+  display: none;
 }
 
 .swiper-button-next::after, .swiper-button-prev::after {
@@ -1078,7 +1094,7 @@ select option {
 .gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .blogItemsCategoryParent {
   background: #fff;
   padding: 30px;
-  margin: 30px 0px;
+  margin: 30px 0px 0px 0px;
   border-radius: 3px;
 }
 .gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .blogItemsCategoryParent .blogItemsCategory {
