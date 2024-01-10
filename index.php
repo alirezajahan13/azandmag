@@ -190,7 +190,7 @@ get_header();
 		<?php
 				$latestargs = array(
 					'post_type'=>'post',
-					'posts_per_page' => 10,
+					'posts_per_page' => -1,
 					'order' => 'DESC',
 				);
 				$the_query = new WP_Query( $latestargs );
