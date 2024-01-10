@@ -11,7 +11,7 @@ $(document).ready(function(){
         else{
             $('.mainHeaderStickyBack').removeClass('showStickyHeader');                 
         }
-        if($(document).scrollTop()>=20){
+        if($(document).scrollTop() >= 20){
             $('.home mainHeaderBack').addClass('backWhiteHeader');
         }
         else{

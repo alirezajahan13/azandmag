@@ -915,7 +915,7 @@ select option {
   padding: 15px 1px !important;
 }
 .azandBlogContainer .swiper-wrapper .latestPostsItems {
-  border-radius: 5px;
+  border-radius: 3px;
   overflow: hidden;
 }
 .azandBlogContainer .swiper-wrapper .latestPostsItems a img {
@@ -954,18 +954,118 @@ select option {
   display: block;
 }
 
-.gridSectionBlogParent .gridSectionBlog .recentPostsHomeList {
-  display: flex;
-  flex-wrap: wrap;
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight {
   width: 40%;
-  gap: 25px;
 }
-.gridSectionBlogParent .gridSectionBlog .recentPostsHomeList a:nth-child(1) {
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 15px;
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a {
+  position: relative;
+  overflow: hidden;
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a:nth-child(1) {
+  grid-area: 1/1/3/3;
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a:nth-child(2) {
+  grid-area: 3/2/4/3;
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a:nth-child(3) {
+  grid-area: 3/1/4/2;
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a:nth-child(2) h3, .gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a:nth-child(3) h3 {
+  font-size: 16px;
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a:nth-child(2) .detailBoxsFooter, .gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a:nth-child(3) .detailBoxsFooter {
+  bottom: 0 !important;
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a:nth-child(2) .detailBoxsFooter span, .gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a:nth-child(3) .detailBoxsFooter span {
+  font-size: 12px;
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(25, 25, 35, 0.5);
+  z-index: 999;
+  border-radius: 3px;
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a:hover img {
+  transform: scale(1.1);
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a img {
+  display: block;
+  position: relative;
+  border-radius: 3px;
+  transition: all 0.4s;
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a .detailBoxsParent {
+  position: absolute;
+  top: 0;
+  margin: auto;
   width: 100%;
+  height: 100%;
+  z-index: 9999;
 }
-.gridSectionBlogParent .gridSectionBlog .recentPostsHomeList a:nth-child(2) {
-  width: 48%;
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a .detailBoxsParent h3 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  color: #fff !important;
 }
-.gridSectionBlogParent .gridSectionBlog .recentPostsHomeList a:nth-child(3) {
-  width: 48%;
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a .detailBoxsParent .detailBoxsFooter {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px;
+  z-index: 9999;
+  color: #fff !important;
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a .detailBoxsParent .detailBoxsFooter .timeCountSinglePost, .gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a .detailBoxsParent .detailBoxsFooter .homePageBlogCardTimeCount {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a .detailBoxsParent .detailBoxsFooter .timeCountSinglePost svg, .gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .recentPostsHomeList a .detailBoxsParent .detailBoxsFooter .homePageBlogCardTimeCount svg {
+  display: block;
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .blogItemsCategoryParent {
+  background: #fff;
+  padding: 30px;
+  margin: 30px 0px;
+  border-radius: 3px;
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .blogItemsCategoryParent .blogItemsCategory {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 10px;
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .blogItemsCategoryParent .blogItemsCategory .itemsCatParent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .blogItemsCategoryParent .blogItemsCategory .itemsCatParent:hover {
+  transform: scaleX(-10px);
+}
+.gridSectionBlogParent .gridSectionBlog .recentPostsHomeListRight .blogItemsCategoryParent .blogItemsCategory .itemsCatParent .blogCatItem {
+  font-size: 17px;
+  font-weight: 500;
 }/*# sourceMappingURL=additional.css.map */

@@ -128,6 +128,10 @@ get_header();
 </div>
 <div class="gridSectionBlogParent">
 	<div class="gridSectionBlog mainView">
+		<div class="recentPostsHomeListRight">
+		<div class="generalHeading">
+			<h2>پربازدید ترین مطالب</h2>
+		</div>
 		<?php
             $recent_posts_args = array(
                 'posts_per_page' => 3,
@@ -145,14 +149,18 @@ get_header();
                         <?php if (has_post_thumbnail()) : ?>
                             <?php the_post_thumbnail('full'); ?>
                         <?php endif; ?>
-                        <h3><?php the_title(); ?></h3>
-						<div class="timeCountSinglePost">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="12" height="12"><path d="M8 0c4.4 0 8 3.6 8 8s-3.6 8-8 8-8-3.6-8-8 3.6-8 8-8zm0 2C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm1 2v3h3v2H7V4h2z"/></svg>
-							<span>مطالعه '<?php echo do_shortcode('[reading_time]') ?></span>
-						</div>
-						<div class="homePageBlogCardTimeCount">
-							<span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" version="1.1" fill="#7d7d87"><path d="M 15 2 L 13 2 L 13 0 L 10 0 L 10 2 L 6 2 L 6 0 L 3 0 L 3 2 L 1 2 C 0.449219 2 0 2.449219 0 3 L 0 15 C 0 15.550781 0.449219 16 1 16 L 15 16 C 15.550781 16 16 15.550781 16 15 L 16 3 C 16 2.449219 15.550781 2 15 2 Z M 14 14 L 2 14 L 2 5 L 14 5 Z M 14 14 "></path></svg></span>
-							<span><?php echo get_the_date('j F') ?></span>
+						<div class="detailBoxsParent">
+							<h3><?php the_title(); ?></h3>
+							<div class="detailBoxsFooter">
+								<div class="timeCountSinglePost">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="12" height="12" fill="#fff"><path d="M8 0c4.4 0 8 3.6 8 8s-3.6 8-8 8-8-3.6-8-8 3.6-8 8-8zm0 2C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm1 2v3h3v2H7V4h2z"/></svg>
+									<span>مطالعه '<?php echo do_shortcode('[reading_time]') ?></span>
+								</div>
+								<div class="homePageBlogCardTimeCount">
+									<span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" version="1.1" fill="#fff"><path d="M 15 2 L 13 2 L 13 0 L 10 0 L 10 2 L 6 2 L 6 0 L 3 0 L 3 2 L 1 2 C 0.449219 2 0 2.449219 0 3 L 0 15 C 0 15.550781 0.449219 16 1 16 L 15 16 C 15.550781 16 16 15.550781 16 15 L 16 3 C 16 2.449219 15.550781 2 15 2 Z M 14 14 L 2 14 L 2 5 L 14 5 Z M 14 14 "></path></svg></span>
+									<span><?php echo get_the_date('j F') ?></span>
+								</div>
+							</div>
 						</div>
                     </a>
                     <?php
@@ -161,6 +169,27 @@ get_header();
             }
             wp_reset_postdata();
         ?>
+		<div class="blogItemsCategoryParent">
+			<div class="generalHeading">
+				<h2>دسته بندی ها</h2>
+			</div>
+			<div class="blogItemsCategory">
+				<?php
+					$categories = get_terms( array(
+						'taxonomy' => 'category',
+						'hide_empty' => true,
+						'exclude'=>array('1')
+					) );
+					foreach($categories as $category) {
+						echo '<div class="itemsCatParent">';
+						echo '<svg width="20" height="20" fill="#9696a0" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)"><path d="M0 0h48v48H0z" fill="none"/><path d="M8 26h25.172l-14 14L22 42.828 40.828 24 22 5.172 19.172 8l14 14H8z"/></svg>';
+						echo '<a class="blogCatItem" href="' . get_category_link($category->term_id) . '">' . $category->name . '</a>';
+						echo '</div>';
+					}
+				?>
+			</div>
+		</div>
+		</div>
 		<div class="recentPostsHomeListLeft">
 		<div class="generalHeading">
 			<h2>آخرین مطالب</h2>
