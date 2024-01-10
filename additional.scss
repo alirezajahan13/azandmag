@@ -464,6 +464,10 @@
     .gridSectionBlog{
         .recentPostsHomeListRight{
             width: 40%;
+            @include sm{
+                width: 100%;
+                order: 2;
+            }
             .recentPostsHomeList{
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
@@ -472,8 +476,14 @@
                 a{
                     position: relative;
                     overflow: hidden;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
                     &:nth-child(1){
                         grid-area: 1 / 1 / 3 / 3;
+                        height: 400px;
                     }
                     &:nth-child(2){
                         grid-area: 3 / 2 / 4 / 3;
@@ -482,6 +492,7 @@
                         grid-area: 3 / 1 / 4 / 2; 
                     }
                     &:nth-child(2) , &:nth-child(3){
+                        height: 200px;
                         h3{
                             font-size: 16px;
                         }
@@ -558,25 +569,59 @@
                 }
             }
             .blogItemsCategoryParent{
-                background: #fff;
-                padding: 30px;
-                margin: 30px 0px 0px 0px;
-                border-radius: 3px;
+                position: sticky;
+                height: max-content;
+                top: 80px;
+                bottom: auto;
                 .blogItemsCategory{
-                    display: flex;
-                    flex-direction: column;
-                    gap: 30px;
-                    padding: 10px;
+                    background-color: #fff;
+                    position: relative;
+                    padding: 30px;
+                    &::after{
+                        position: absolute;
+                        content: '';
+                        background-color: #eeeeee;
+                        width: 2px;
+                        height: 80%;
+                        top: 0;
+                        bottom: 0;
+                        right: 30px;
+                        margin-top: auto;
+                        margin-bottom: auto;
+                    }
                     .itemsCatParent{
                         display: flex;
-                        align-items: center;
-                        gap: 10px;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        padding: 0 20px;
+                        margin: auto;
+                        margin: 15px auto;
+                        position: relative;
+                        &::before{
+                            position: absolute;
+                            content: '';
+                            background-color: $mainColorDark;
+                            width: 2px;
+                            height: 100%;
+                            top: 0;
+                            bottom: 0;
+                            right: 0;
+                            z-index: 999;
+                            opacity: 0;
+                            transition: all 0.3s;
+                        }
                         &:hover{
-                            transform: scaleX(-10px);
+                            &::before{
+                                opacity: 1;
+                            }
                         }
                         .blogCatItem{
-                            font-size: 17px;
-                            font-weight: 500;
+                            font-size: 14px;
+                            font-weight: 600;
+                        }
+                        .categoryCount{
+                            font-size: 13px;
+                            font-size: 400;
                         }
                     }
                 }
@@ -584,3 +629,13 @@
         }
     }
 }  
+
+.blogItemsTags{
+    background-color: #fff;
+    position: relative;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+}
