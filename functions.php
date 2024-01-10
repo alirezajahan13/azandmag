@@ -224,3 +224,23 @@ add_filter('excerpt_more', 'new_excerpt_more');
 
 
 
+function pagination_bar() {
+	global $wp_query;
+
+	$total_pages = $wp_query->max_num_pages;
+
+	if ($total_pages > 1){
+		// $current_page = max(1, get_query_var('paged'));
+		global $wp_query;
+		$wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
+		echo paginate_links(array(
+			'base' =>@add_query_arg('paged','%#%'),
+			'format' => '/page/%#%',
+			'current' => $current,
+			'total' => $total_pages,
+			'next_text' => '<span class="leftArrow"></span>',
+			'prev_text' => '<span class="rightArrow"></span>',
+			'mid_size'=>1
+		));
+	}
+}
