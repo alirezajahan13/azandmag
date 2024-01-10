@@ -124,6 +124,9 @@
         }
     }
 }
+.backWhiteHeader{
+    background-color: #fff;
+}
 .generalSinglePostStyle{
     width: 100%;
     .singlePostFlex{
@@ -352,15 +355,12 @@
         content: none !important;
     }
 }
-.swiper-button-next{
-    left: -5px !important;
-}
-.swiper-button-prev{
-    right: -5px !important;
-}
 .azandBlogContainer{
-    padding: 25px !important;
+    // padding: 0 !important;
+    // overflow: visible !important;
     .swiper-wrapper{
+        // overflow: hidden;
+        padding: 15px 1px !important;
         .latestPostsItems{
             border-radius: 5px;
             overflow: hidden;
@@ -370,10 +370,23 @@
                 }
             }
             .latestPostsItemsFooter{
+                padding: 20px 20px 15px;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                .titleCardBlogSwiper{
+                    display: flex;
+                    h3{
+                        margin: 0;
+                        padding: 0;
+                        font-size: 18px;
+                        font-weight: 700;
+                    }
+                }
                 .latestPostsItemsFooterIcons{
                     display: flex;
                     align-items: center;
-                    padding: 15px;
+                    // padding: 15px;
                     gap: 10px;
                     .homePageBlogCardTimeCount , .homePageBlogCardCmCount{
                         display: flex;
@@ -397,7 +410,7 @@
         .recentPostsHomeList{
             display: flex;
             flex-wrap: wrap;
-            width: 50%;
+            width: 40%;
             gap: 25px;
             a{
                 &:nth-child(1){
