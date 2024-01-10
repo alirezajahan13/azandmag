@@ -80,7 +80,7 @@ body {
   color: #383e43;
   padding: 0;
   font-size: 14.5px;
-  background-color: #fff;
+  background-color: #f9f9f9;
 }
 
 * {
@@ -727,4 +727,51 @@ select option {
 
 .azandBlogFeaturedContentContainer .azandBlogFeaturedContent .azandBlogContainer .latestPostsItems {
   background-color: #fff;
+}
+
+.recentPostsHomeListLeft {
+  width: 57%;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.gridSectionBlog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.gridSectionBlog .recentPostsHomeListLeft .latestPostsItems {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.gridSectionBlog .recentPostsHomeListLeft .latestPostsItems:last-child {
+  border: none !important;
+}
+.gridSectionBlog .recentPostsHomeListLeft .latestPostsItems > a {
+  width: 140px;
+  height: 140px;
+  order: 2;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.gridSectionBlog .recentPostsHomeListLeft .latestPostsItems > a img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.gridSectionBlog .recentPostsHomeListLeft .latestPostsItems .latestPostsItemsFooter {
+  width: calc(100% - 160px);
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.gridSectionBlog .recentPostsHomeListLeft .latestPostsItems .latestPostsItemsFooter .latestPostsItemsFooterIcons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
 }/*# sourceMappingURL=style-rtl.css.map */

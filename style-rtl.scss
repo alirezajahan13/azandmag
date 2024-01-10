@@ -185,3 +185,50 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
         }
     }
 }
+.recentPostsHomeListLeft{
+    width: 57%;
+    background-color: #fff;
+    padding: 20px;
+}
+.gridSectionBlog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .recentPostsHomeListLeft{
+        .latestPostsItems{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            &:last-child{
+                border: none !important;
+            }
+            >a{
+                width: 140px;
+                height: 140px;
+                order: 2;
+                border-radius: 3px;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+            }
+            .latestPostsItemsFooter{
+                width: calc(100% - 160px);
+                order: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .latestPostsItemsFooterIcons{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
