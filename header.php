@@ -47,7 +47,7 @@
 		wp_nav_menu(
 			array(
 				'theme_location' => 'menu-1',
-				'container_class'=>'mainMenu'
+				'container_class'=>'mobileMenu'
 			)
 		);
 	?>

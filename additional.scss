@@ -50,6 +50,30 @@
                     }
                 }
             }
+            .menu-item-has-children{
+                cursor: pointer;
+                &:hover{
+                    .sub-menu{
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+                .sub-menu{
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    width: 135px;
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: all 0.4s;
+                    align-items: start;
+                    border-radius: 3px;
+                    z-index: 9;
+                    box-shadow: 0 1px 3px 0 rgba(56, 62, 67, 0.1882352941);
+                    backdrop-filter: blur(12px);
+                    background: rgb(255 255 255 / 80%);
+                }
+            }
         }
         .searchIcon{
             display: flex;
@@ -120,6 +144,19 @@
                         font-weight: 500;
                         &:hover{
                             color: #e25e28;
+                        }
+                    }
+                }
+                .menu-item-has-children{
+                    .sub-menu{
+                        li{
+                            a{
+                                color: #383e43;
+                                font-weight: 400;
+                                &:hover{
+                                    color: #e25e28;
+                                }
+                            }
                         }
                     }
                 }
@@ -348,6 +385,10 @@
     max-width: 700px;
 }
 .commentInner{
+    width: 70%;
+    @include sm{
+        width: 100%;
+    }
     textarea{
         margin-right: 0 !important;
     }
@@ -413,8 +454,22 @@
                 }
                 .reply{
                     a{
-                        color: #9696a0 !important;
-                        border-bottom: 0.7px solid #9696a0;
+                        font-size: 12px;
+                        font-weight: 400;
+                        display: block;
+                        width: -moz-max-content;
+                        width: max-content;
+                        transition: all 0.3s;
+                        cursor: pointer;
+                        padding: 2px 10px;
+                        border-radius: 30px;
+                        border: 1px solid #32323c;
+                        margin: 10px 0;
+                        background-color: #fff;
+                        &:hover{
+                            background-color: #32323c;
+                            color: #fff;
+                        }
                     }
                 }
             }
@@ -423,6 +478,28 @@
     .comment-respond{
         .comment-reply-title{
             display: none;
+        }
+        .comment-form{
+            .form-submit{
+                input[type=submit]{
+                    font-weight: 400;
+                    display: block;
+                    width: -moz-max-content;
+                    width: max-content;
+                    transition: all 0.4s;
+                    border-radius: 30px;
+                    padding: 5px 20px;
+                    background-color: #32323c;
+                    border: 1px solid #32323c;
+                    color: #fff;
+                    cursor: pointer;
+                    margin: 10px 0;
+                    &:hover{
+                        color: #fff;
+                        background-color: #383e43;
+                    }
+                }
+            }
         }
     }
 }
@@ -929,7 +1006,7 @@
             z-index: 999;
         }
     }
-    .mainMenu{
+    .mobileMenu{
         padding-top: 30px;
         ul{
             padding: 0 15px;
@@ -962,10 +1039,17 @@
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
+                    svg{
+                        transition: all 0.4s;
+                    }
                 }
                 .sub-menu{
+                    display: none;
                     li{
                         padding: 8px 0px;
+                        a{
+                            font-size: 12.5px;
+                        }
                     }
                 }
             }

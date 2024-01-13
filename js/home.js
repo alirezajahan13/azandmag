@@ -1,7 +1,7 @@
 var $ = jQuery;
 
 $(document).ready(function(){
-    $("#openSearchContainer").click(function() {
+    $(".searchIcon").click(function() {
         $(".searchOverlay").fadeIn(500);
         $(".searchParent").fadeIn(500);
     });
