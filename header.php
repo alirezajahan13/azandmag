@@ -35,13 +35,29 @@
 		</div>
     </form>
 </div>
+<div class="mobileMenuContainer">
+	<div class="mobileMenuHeader">
+		<div class="mobilemenuClose">
+		<svg height="20" width="20" fill="#fff" stroke="#fff" stroke-width="10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 476.213 476.213" xml:space="preserve" transform="rotate(180)"><path d="M476.213 223.107H57.427l94.393-94.394-21.213-21.213L0 238.106l130.607 130.608L151.82 347.5l-94.393-94.393h418.786z"/></svg>
+		</div>
+		<span>گروه مهندسی آزند کنترل</span>
+	</div>
+	<?php
+		wp_nav_menu(
+			array(
+				'theme_location' => 'menu-1',
+				'container_class'=>'mainMenu'
+			)
+		);
+	?>
+</div>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<div class="mainHeaderBack">
 		<div class="mainHeader mainView">
 			<a class="logoSection" href="#">
-				<svg width="50" height="50" fill="#de5826" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="m15.37 13.68-4-12a1 1 0 0 0-1-.68H5.63a1 1 0 0 0-.95.68l-4.05 12a1 1 0 0 0 1 1.32h2.93a1 1 0 0 0 .94-.68l.61-1.78 3 2.27a1 1 0 0 0 .6.19h4.68a1 1 0 0 0 .98-1.32Zm-5.62.66a.32.32 0 0 1-.2-.07L3.9 10.08l-.09-.07h3l.08-.21 1-2.53 2.24 6.63a.34.34 0 0 1-.38.44Zm4.67 0H10.7a1 1 0 0 0 0-.66l-4.05-12h3.72a.34.34 0 0 1 .32.23l4.05 12a.34.34 0 0 1-.32.43Z"/></svg>
+				<svg width="50" height="30" fill="#de5826" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="m15.37 13.68-4-12a1 1 0 0 0-1-.68H5.63a1 1 0 0 0-.95.68l-4.05 12a1 1 0 0 0 1 1.32h2.93a1 1 0 0 0 .94-.68l.61-1.78 3 2.27a1 1 0 0 0 .6.19h4.68a1 1 0 0 0 .98-1.32Zm-5.62.66a.32.32 0 0 1-.2-.07L3.9 10.08l-.09-.07h3l.08-.21 1-2.53 2.24 6.63a.34.34 0 0 1-.38.44Zm4.67 0H10.7a1 1 0 0 0 0-.66l-4.05-12h3.72a.34.34 0 0 1 .32.23l4.05 12a.34.34 0 0 1-.32.43Z"/></svg>
 			</a>
 			<?php
 				wp_nav_menu(
@@ -57,12 +73,15 @@
 				</div>
 				<span>جستجو</span>
 			</a>
+			<span class="headerMobileMenu">
+				<svg height="30" width="30" fill="#32323c" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" xml:space="preserve"><path d="M28 0C12.561 0 0 12.561 0 28s12.561 28 28 28 28-12.561 28-28S43.439 0 28 0zm12 41H16a2 2 0 0 1 0-4h24a2 2 0 0 1 0 4zm0-11H16a2 2 0 0 1 0-4h24a2 2 0 0 1 0 4zm0-11H16a2 2 0 0 1 0-4h24a2 2 0 0 1 0 4z"/></svg>
+			</span>
 		</div>
 	</div>
 	<div class="mainHeaderStickyBack">
 		<div class="mainHeader mainView">
 			<a class="logoSection" href="#">
-				<svg width="50" height="50" fill="#de5826" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="m15.37 13.68-4-12a1 1 0 0 0-1-.68H5.63a1 1 0 0 0-.95.68l-4.05 12a1 1 0 0 0 1 1.32h2.93a1 1 0 0 0 .94-.68l.61-1.78 3 2.27a1 1 0 0 0 .6.19h4.68a1 1 0 0 0 .98-1.32Zm-5.62.66a.32.32 0 0 1-.2-.07L3.9 10.08l-.09-.07h3l.08-.21 1-2.53 2.24 6.63a.34.34 0 0 1-.38.44Zm4.67 0H10.7a1 1 0 0 0 0-.66l-4.05-12h3.72a.34.34 0 0 1 .32.23l4.05 12a.34.34 0 0 1-.32.43Z"/></svg>
+				<svg width="50" height="30" fill="#de5826" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="m15.37 13.68-4-12a1 1 0 0 0-1-.68H5.63a1 1 0 0 0-.95.68l-4.05 12a1 1 0 0 0 1 1.32h2.93a1 1 0 0 0 .94-.68l.61-1.78 3 2.27a1 1 0 0 0 .6.19h4.68a1 1 0 0 0 .98-1.32Zm-5.62.66a.32.32 0 0 1-.2-.07L3.9 10.08l-.09-.07h3l.08-.21 1-2.53 2.24 6.63a.34.34 0 0 1-.38.44Zm4.67 0H10.7a1 1 0 0 0 0-.66l-4.05-12h3.72a.34.34 0 0 1 .32.23l4.05 12a.34.34 0 0 1-.32.43Z"/></svg>
 			</a>
 			<?php
 				wp_nav_menu(
@@ -78,5 +97,8 @@
 				</div>
 				<span>جستجو</span>
 			</a>
+			<span class="headerMobileMenu">
+				<svg height="30" width="30" fill="#32323c" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" xml:space="preserve"><path d="M28 0C12.561 0 0 12.561 0 28s12.561 28 28 28 28-12.561 28-28S43.439 0 28 0zm12 41H16a2 2 0 0 1 0-4h24a2 2 0 0 1 0 4zm0-11H16a2 2 0 0 1 0-4h24a2 2 0 0 1 0 4zm0-11H16a2 2 0 0 1 0-4h24a2 2 0 0 1 0 4z"/></svg>
+			</span>
 		</div>
 	</div>

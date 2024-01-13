@@ -574,6 +574,11 @@ select option {
 .mainHeaderBack .mainHeader .mainMenu, .mainHeaderStickyBack .mainHeader .mainMenu {
   width: calc(100% - 20px);
 }
+@media screen and (max-width: 768px) {
+  .mainHeaderBack .mainHeader .mainMenu, .mainHeaderStickyBack .mainHeader .mainMenu {
+    display: none;
+  }
+}
 .mainHeaderBack .mainHeader ul, .mainHeaderStickyBack .mainHeader ul {
   margin: 0;
   padding: 0;
@@ -609,6 +614,7 @@ select option {
   display: flex;
   align-items: center;
   cursor: pointer;
+  margin-right: auto;
 }
 .mainHeaderBack .mainHeader .searchIcon .searchIconBack, .mainHeaderStickyBack .mainHeader .searchIcon .searchIconBack {
   border-radius: 100%;
@@ -622,6 +628,11 @@ select option {
 .mainHeaderBack .mainHeader .searchIcon span, .mainHeaderStickyBack .mainHeader .searchIcon span {
   font-weight: 700;
   margin-right: 5px;
+}
+@media screen and (max-width: 768px) {
+  .mainHeaderBack .mainHeader .searchIcon span, .mainHeaderStickyBack .mainHeader .searchIcon span {
+    display: none;
+  }
 }
 
 .mainHeaderStickyBack {
@@ -676,6 +687,27 @@ select option {
 }
 .home .mainHeaderBack .searchIcon span:hover, .blog .mainHeaderBack .searchIcon span:hover {
   color: #e25e28;
+}
+.home .mainHeaderBack .headerMobileMenu, .blog .mainHeaderBack .headerMobileMenu {
+  position: relative;
+}
+.home .mainHeaderBack .headerMobileMenu::before, .blog .mainHeaderBack .headerMobileMenu::before {
+  position: absolute;
+  content: "";
+  background-color: #fff;
+  width: 25px;
+  height: 25px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+  border-radius: 100%;
+  margin: auto;
+}
+.home .mainHeaderBack .headerMobileMenu svg, .blog .mainHeaderBack .headerMobileMenu svg {
+  position: relative;
+  z-index: 9999;
 }
 
 .backWhiteHeader {
@@ -1374,4 +1406,91 @@ select option {
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 10px;
+}
+
+.headerMobileMenu {
+  display: none;
+  margin-right: 10px;
+}
+@media screen and (max-width: 768px) {
+  .headerMobileMenu {
+    display: flex;
+  }
+}
+
+.mobileMenuContainer {
+  position: fixed;
+  right: 0;
+  background-color: #fff;
+  top: 53px;
+  bottom: 0;
+  height: auto;
+  width: 280px;
+  z-index: 99999999;
+}
+.mobileMenuContainer .mobileMenuHeader {
+  height: 100px;
+  background-image: url("img/menuback.avif");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.mobileMenuContainer .mobileMenuHeader .mobilemenuClose {
+  position: absolute;
+  z-index: 9999;
+  top: 5px;
+  left: 5px;
+  display: flex;
+  border: 1px solid #fff;
+  border-radius: 100%;
+  padding: 3px;
+}
+.mobileMenuContainer .mobileMenuHeader span {
+  color: #fff;
+  position: relative;
+  z-index: 9999;
+  font-size: 16px;
+  font-weight: 800;
+}
+.mobileMenuContainer .mobileMenuHeader::after {
+  position: absolute;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+}
+.mobileMenuContainer .mainMenu {
+  padding-top: 30px;
+}
+.mobileMenuContainer .mainMenu ul {
+  padding: 0 15px;
+  margin: 0;
+}
+.mobileMenuContainer .mainMenu ul li {
+  transition: all 0.3s;
+  margin: 5px 0;
+  padding: 0;
+  display: flex;
+}
+.mobileMenuContainer .mainMenu ul li::before {
+  display: none;
+}
+.mobileMenuContainer .mainMenu ul li a {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 15px;
+  width: 100%;
+  color: #6c6c6d;
+}
+.mobileMenuContainer .mainMenu ul .current_page_item {
+  background-color: #e25e28;
+  border-radius: 15px;
+  transition: all 0.3s;
+}
+.mobileMenuContainer .mainMenu ul .current_page_item a {
+  color: #fff;
 }/*# sourceMappingURL=additional.css.map */
