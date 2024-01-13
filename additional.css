@@ -1418,15 +1418,38 @@ select option {
   }
 }
 
+.showMobileMenu {
+  right: 0 !important;
+}
+
+.mobilMenuOverlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 99999999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s;
+}
+
+.showMobilMenuOverlay {
+  opacity: 1;
+  visibility: visible;
+}
+
 .mobileMenuContainer {
   position: fixed;
-  right: 0;
+  right: -350px;
   background-color: #fff;
-  top: 53px;
+  top: 0px;
   bottom: 0;
   height: auto;
   width: 280px;
-  z-index: 99999999;
+  z-index: 999999991;
+  transition: all 0.4s;
 }
 .mobileMenuContainer .mobileMenuHeader {
   height: 100px;
@@ -1472,9 +1495,8 @@ select option {
 }
 .mobileMenuContainer .mainMenu ul li {
   transition: all 0.3s;
-  margin: 5px 0;
-  padding: 0;
-  display: flex;
+  margin: 8px 0;
+  padding: 10px;
 }
 .mobileMenuContainer .mainMenu ul li::before {
   display: none;
@@ -1482,7 +1504,6 @@ select option {
 .mobileMenuContainer .mainMenu ul li a {
   font-size: 13px;
   font-weight: 500;
-  padding: 15px;
   width: 100%;
   color: #6c6c6d;
 }
@@ -1493,4 +1514,12 @@ select option {
 }
 .mobileMenuContainer .mainMenu ul .current_page_item a {
   color: #fff;
+}
+.mobileMenuContainer .mainMenu ul .menu-item-has-children a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mobileMenuContainer .mainMenu ul .menu-item-has-children .sub-menu li {
+  padding: 8px 0px;
 }/*# sourceMappingURL=additional.css.map */
